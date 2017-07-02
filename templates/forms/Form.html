@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block content%}
+<div class="container">
+    <form name = "form" 
+         action = "{% url "saveforms" %}" method = "POST" >{% csrf_token %}
+    <div>
+		<h2>{{formHeader_h2}}</h2><br>
+		<h4>{{formHeader_h4}}</h4>
+	</div>
+	<br>
+	<div class="description">{% autoescape off %}{{formDescription}}{% endautoescape %}</div>
+		 {% for widget in formFields %}
+			{% if widget.widget_type == "hidden" %}
+				<input type="hidden" name="{{widget.name}}" value="{{widget.default_value}}" />
+			{% else%}
+			 <div class="form-group" style = "max-width:470px;">
+				<label for = "{{widget.name}}" style = "margin-left:20%;">{{widget.label}}</label>
+				<textarea class="form-control" style = "border-color: #5b9bd5;border-width:2px;margin-left:20%;" name = "{{widget.name}}" >
+				</textarea>
+			 </div>
+			 <br>
+			{% endif%}
+		 {% endfor %}
+         <div class="form-group" style = "max-width:470px;">
+               <button class = "btn btn-default" style = "margin-left:20%;background-color:#5b9bd5;height: 50px;width: 130px;font-size: 20px;"  type = "submit" value = "SUBMIT" ><font color="white">SUBMIT</font>
+               </button>
+         </div>
+      </form>
+</div>
+	  
+{% endblock %}

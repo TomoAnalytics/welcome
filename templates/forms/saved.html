@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+
+{% block content%}
+	<div class="container">
+      {% if saved %}
+         <strong>Your feedback was saved.</strong>
+      {% endif %}
+      
+      {% if not saved %}
+         <strong>Your feedback was not saved.</strong>
+      {% endif %}
+	</div>
+{% endblock %}

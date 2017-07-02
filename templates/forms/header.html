@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Forms</title>
+	<meta charset="utf-8"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+	<style>
+		.description {
+			
+			
+		
+		}
+	</style>
+</head>
+
+
+<body class="container-fluid" style="background-color: #f6f6f6">
+	
+	<div>
+		<h2>PeaceGeeks</h1><br>
+		<h4>Welcome to StageLense Assesments</h4>
+	<div>
+	<br>
+	<div>
+		
+		<div class="description">
+			<h5><b>Direction for completion</b></h5>
+			
+			<ol>
+				<li> The following survey contains thirty-six sentence begining of various kinds. Please just finish each sentence. There are no right or wrong answers.</li>
+				<li> Allow yourself no more than forty-five minutes of private time to finish the form at one sitting.</li>
+				<li> After each response, use the tab key or cursor to move to the next form field.</li>
+				<li> This document will be treated with the utmost confidentiality. Please respond spontaneously and honesty.</li>
+			</ol>
+
+
+		<div>
+	<div>
+
+	<div>
+		{% block content%}
+		{% endblock %}
+	</div>
+
+
+
+</body>
+
+</html>
